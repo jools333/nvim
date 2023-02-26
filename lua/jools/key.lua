@@ -20,6 +20,8 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>") --  go to previous tab
+
 -- vim-maximizer
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
@@ -33,7 +35,6 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find stri
 vim.keymap.set("n", "ff", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-vim.keymap.set("n", "<C-M-p>", "<cmd>Telescope project<cr>") -- list open sessions
 
 -- telescope git commands
 vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
@@ -66,3 +67,4 @@ vim.keymap.set("n", "gr", function()
 end, opts)
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<M-x>", "<cmd>%bd|e#<cr>")
+

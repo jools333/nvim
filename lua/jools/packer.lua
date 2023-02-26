@@ -76,6 +76,5 @@ return packer.startup(function(use)
 	  }
 	}
     use("Shatur/neovim-session-manager")
-    use("nvim-telescope/telescope-ui-select.nvim")
-    use("ahmedkhalf/project.nvim")
+    use("kdheepak/lazygit.nvim")
 end)
