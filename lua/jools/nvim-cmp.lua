@@ -32,18 +32,28 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+		["<C-a>"] = cmp.mapping.complete(), -- show completion suggestions
 		["<C-e>"] = cmp.mapping.abort(), -- close completion window
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 	}),
 	-- sources for autocompletion
-	sources = cmp.config.sources({
+	sources = {
 		{ name = "nvim_lsp" }, -- lsp
 		{ name = "luasnip" }, -- snippets
-		{ name = "buffer" }, -- text within current buffer
+		{ name = "vim-dadbod-completion" }, -- mysql
+		{
+            name = "buffer",
+            option = {
+                keyword_pattern = [[\k\+]],
+                get_bufnrs = function() 
+                    return vim.api.nvim_list_bufs()
+                end,
+            }
+        }, -- text within current buffer
 		{ name = "path" }, -- file system paths
-	}),
+	},
 	-- configure lspkind for vs-code like icons
+    
 	formatting = {
 		format = lspkind.cmp_format({
 			maxwidth = 50,
@@ -51,3 +61,11 @@ cmp.setup({
 		}),
 	},
 })
+
+vim.api.nvim_exec(
+  [[
+      autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
+      autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+  ]],
+  false
+)

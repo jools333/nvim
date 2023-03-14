@@ -17,3 +17,6 @@ session.setup({
   max_path_length = 80,  -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
 })
 
+
+local laravel = require("laravel")
+laravel.setup({})

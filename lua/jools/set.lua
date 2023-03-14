@@ -1,5 +1,5 @@
 -- line numbers
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.number = true
 
 -- tabs & indentation
@@ -28,7 +28,13 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.iskeyword:append("-")
+-- vim.opt.iskeyword:append("-")
 
 vim.php_sql_query = 1
 vim.php_htmlInStrings = 1
+
+pcall(vim.cmd, "set nofoldenable")
+pcall(vim.cmd, "set winminwidth = 40")
+
+vim.g.db_ui_winwidth = 50
+

@@ -30,14 +30,6 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim") -- statusline
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		requires = {
-			{ "nvim-tree/nvim-web-devicons" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	}) -- enhanced lsp uis
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
@@ -75,6 +67,39 @@ return packer.startup(function(use)
 	    {'rafamadriz/friendly-snippets'}, -- Optional
 	  }
 	}
+
+    -- sessions
     use("Shatur/neovim-session-manager")
+    -- git client
     use("kdheepak/lazygit.nvim")
+    -- tabs
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    -- multicursors
+    use("mg979/vim-visual-multi")
+    -- smart close buffers
+    use("marklcrns/vim-smartq")
+    -- laravel artisan commands
+    use("adalessa/laravel.nvim")
+    -- LSPSaga next
+    use("jinzhongjia/LspUI.nvim")
+    -- Hightlight word under cursor
+    use("yamatsum/nvim-cursorline")
+    -- Easy motions
+    -- use("unblevable/quick-scope")
+    use("phaazon/hop.nvim")
+
+    --  Mysql client
+    use("tpope/vim-dadbod")
+    use("kristijanhusak/vim-dadbod-ui")
+    use("kristijanhusak/vim-dadbod-completion")
+
+    use ("danymat/neogen")
+
+    -- mysql in strings Hightlight
+    use({
+        "gbprod/php-enhanced-treesitter.nvim",
+        requires = {
+            { "derekstride/tree-sitter-sql", run = ":TSInstall sql" },
+        }
+    })
 end)
