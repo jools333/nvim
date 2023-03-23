@@ -36,5 +36,6 @@ vim.php_htmlInStrings = 1
 pcall(vim.cmd, "set nofoldenable")
 pcall(vim.cmd, "set winminwidth = 40")
 
-vim.g.db_ui_winwidth = 50
-
+vim.g["db_ui_winwidth"] = 50
+vim.g["sneak#label"] = true
+vim.g["sneak#use_ic_scs"] = true

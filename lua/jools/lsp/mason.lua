@@ -24,7 +24,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		-- "html",
 		-- "cssls",
-        -- "phpactor",
+        "phpactor",
 		-- "tailwindcss",
 	},
 	-- auto-install configured servers (with lspconfig)

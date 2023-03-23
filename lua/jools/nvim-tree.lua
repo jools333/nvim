@@ -19,6 +19,12 @@ nvimtree.setup({
     enable = false,
     update_root = false
   },
+    view = {
+        width = 45 
+    },
+     filters = {
+        dotfiles = false,
+      },
   -- change folder arrow icons
   renderer = {
     icons = {
@@ -67,4 +73,4 @@ local function open_nvim_tree(data)
   require("nvim-tree.api").tree.open()
 end
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })

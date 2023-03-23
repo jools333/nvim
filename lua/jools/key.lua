@@ -29,7 +29,8 @@ vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>") --  go to previous tab
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- nvim-tree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+-- vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+vim.keymap.set("n", "<leader>e", ":Ranger<CR>") -- toggle file explorer
 
 -- telescope
 vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -48,7 +49,8 @@ vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list curre
 vim.keymap.set("n", "<leader>ga", "<cmd>Gitsigns blame_line<cr>") -- current line author
 
 
-vim.keymap.set("n", "mm", "<cmd>NvimTreeFindFile<cr>") -- find string under cursor in current working directory
+-- vim.keymap.set("n", "mm", "<cmd>NvimTreeFindFile<cr><cmd>NvimTreeFocus<cr>") -- find string under cursor in current working directory
+vim.keymap.set("n", "mm", ":Ranger<CR>") -- toggle file explorer
 vim.keymap.set("n", "<C-x>", ":SmartQ!<cr>") 
 vim.keymap.set("n", "<C-w>", ":SmartQ<cr>") 
 
@@ -106,6 +108,9 @@ vim.keymap.set("n", "<leader>r1", ":resize +10<Cr>")
 vim.keymap.set("n", "<leader>r2", ":resize +20<Cr>")
 vim.keymap.set("n", "<leader>r4", ":resize +40<Cr>")
 vim.keymap.set("n", "<leader>r5", ":resize +50<Cr>")
+
+vim.keymap.set("n", "f", "<Plug>Sneak_s")
+vim.keymap.set("n", "F", "<Plug>Sneak_S")
 
 -- docs
 vim.keymap.set("n", "<leader>d", "<Cmd>Neogen<Cr>")

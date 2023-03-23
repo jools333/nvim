@@ -85,14 +85,15 @@ return packer.startup(function(use)
     -- Hightlight word under cursor
     use("yamatsum/nvim-cursorline")
     -- Easy motions
-    -- use("unblevable/quick-scope")
     use("phaazon/hop.nvim")
+    use("justinmk/vim-sneak")
 
     --  Mysql client
     use("tpope/vim-dadbod")
     use("kristijanhusak/vim-dadbod-ui")
     use("kristijanhusak/vim-dadbod-completion")
 
+    --  Docs
     use ("danymat/neogen")
 
     -- mysql in strings Hightlight
@@ -102,4 +103,22 @@ return packer.startup(function(use)
             { "derekstride/tree-sitter-sql", run = ":TSInstall sql" },
         }
     })
+
+    use({
+        "dnlhc/glance.nvim",
+        config = function()
+            require('glance').setup({
+            -- your configuration
+            })
+        end,
+    })
+
+
+    -- Ranger integration
+    use("rbgrouleff/bclose.vim")
+    use("francoiscabrol/ranger.vim")
+
+    -- Code tree
+   use { 'stevearc/aerial.nvim' }
 end)
+
