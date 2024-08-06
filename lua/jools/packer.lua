@@ -73,15 +73,22 @@ return packer.startup(function(use)
     -- git client
     use("kdheepak/lazygit.nvim")
     -- tabs
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
+    -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     -- multicursors
     use("mg979/vim-visual-multi")
     -- smart close buffers
     use("marklcrns/vim-smartq")
     -- laravel artisan commands
-    use("adalessa/laravel.nvim")
+    -- use("adalessa/laravel.nvim")
     -- LSPSaga next
-    use("jinzhongjia/LspUI.nvim")
+    use {
+        "jinzhongjia/LspUI.nvim",
+	    branch = 'main',
+	    config = function()
+            -- require("LspUI").setup()
+        end
+    }
     -- Hightlight word under cursor
     use("yamatsum/nvim-cursorline")
     -- Easy motions
@@ -119,6 +126,13 @@ return packer.startup(function(use)
     use("francoiscabrol/ranger.vim")
 
     -- Code tree
-   use { 'stevearc/aerial.nvim' }
+    use('stevearc/aerial.nvim')
+
+    -- Copilot
+    -- use("github/copilot.vim")
+    use ('Exafunction/codeium.vim')
+
+    use {'j-hui/fidget.nvim', after = "nvim-lspconfig" }
+    use {'liuchengxu/vista.vim'}
 end)
 

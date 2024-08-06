@@ -38,3 +38,10 @@ treesitter.setup({
   -- auto install above language parsers
   auto_install = true,
 })
+
+
+local status, fidget = pcall(require, "fidget")
+if not status then
+  return
+end
+fidget.setup {}

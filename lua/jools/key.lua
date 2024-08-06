@@ -5,7 +5,7 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 vim.keymap.set("i", "<C-s>", "<cmd>w<CR>")
 
 -- clear search highlights
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
+vim.keymap.set("n", "<leader>nn", ":nohl<CR>")
 
 -- increment/decrement numbers
 vim.keymap.set("n", "<leader>+", "<C-a>") -- increment
@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>") --  go to previous tab
 
@@ -36,7 +37,7 @@ vim.keymap.set("n", "<leader>e", ":Ranger<CR>") -- toggle file explorer
 vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
 vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-vim.keymap.set("n", "ff", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 vim.keymap.set("n", "<C-t>", "<cmd>Telescope oldfiles<cr>") -- list available help tags
@@ -71,9 +72,13 @@ vim.keymap.set("n", "gr", function()
     }
     require('telescope.builtin').lsp_document_symbols(opts)
 end)
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope buffers<cr>")
+-- vim.keymap.set("n", "<leader>ff", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<M-x>", "<cmd>%bd|e#<cr>")
 vim.keymap.set("n", "<leader>k", "<cmd>BufferLinePick<cr>")
+vim.keymap.set("n", "<C-M-h>", "<cmd>BufferLineMovePrev<cr>")
+vim.keymap.set("n", "<C-M-l>", "<cmd>BufferLineMoveNext<cr>")
+vim.keymap.set("n", "<leader>cc", "<cmd>BufferLineCloseRight<cr>")
+vim.keymap.set("n", "<leader>vv", "<cmd>BufferLineCloseLeft<cr>")
 
 -- easy motion
 vim.keymap.set("n", "<leader>h", "<cmd>HopWordCurrentLine<cr>")
@@ -81,10 +86,11 @@ vim.keymap.set("n", "<leader>g", "<cmd>HopWord<cr>")
 vim.keymap.set("n", "<leader>l", "<cmd>HopLineStart<cr>")
 
 -- tab navigation
-vim.keymap.set("n", "gt", "<cmd>bn<cr>")
-vim.keymap.set("n", "gT", "<cmd>bp<cr>")
-vim.keymap.set("n", "<M-l>", "<cmd>bn<cr>")
-vim.keymap.set("n", "<M-h>", "<cmd>bp<cr>")
+vim.keymap.set("n", "gt", "<cmd>BufferLineCycleNext<cr>")
+vim.keymap.set("n", "gT", "<cmd>BufferLineCyclePrev<cr>")
+vim.keymap.set("n", "<M-l>", "<cmd>BufferLineCycleNext<cr>")
+vim.keymap.set("n", "<M-h>", "<cmd>BufferLineCyclePrev<cr>")
+vim.keymap.set("n", "<leader><leader>", "<C-6>")
 
 vim.keymap.set("n", "<leader>d", "<cmd>Artisan debug<cr>") -- run debug command
 
